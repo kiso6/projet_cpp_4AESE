@@ -10,6 +10,6 @@ _Raphael Tessier et Kilian Soual_
 ## Specifications:  
 **Board**: ESP8266 + Shield Grove  
 **Language**: C++ 17  
-**PINOUT : **  
+**PINOUT :**  
 ![Pinout](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP8266-NodeMCU-kit-12-E-pinout-gpio-pin.png?quality=100&strip=all&ssl=1)  
 
