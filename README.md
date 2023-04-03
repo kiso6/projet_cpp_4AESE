@@ -14,8 +14,10 @@ _Raphael Tessier et Kilian Soual_
 ![Pinout](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP8266-NodeMCU-kit-12-E-pinout-gpio-pin.png?quality=100&strip=all&ssl=1)  
 ______________________________________________________________
 ## Hardware:  
+Grove sensors:  
+[LINK](https://www.seeedstudio.com/ "Grove Actuators/Sensors")
   - Moteurs x2
-  - Servo x1 ou roue bille libre [Servos](https://www.seeedstudio.com/Grove-Servo.html? queryID=60b8e769f42d50c504825342f62de8bb&objectID=1626&indexName=bazaar_retailer_products "Servomoteurs Grove")
+  - Servo x1 ou roue bille libre
   - 4 leds (rouge x2 jaune x2)
   - capteur ultrason (detection d'obstacles)
   - strcuture LEGO
