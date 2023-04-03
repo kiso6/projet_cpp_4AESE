@@ -1,0 +1,22 @@
+const int led_gauche=D5;
+const int led_droite=D6;
+
+void clignotant(int pin){
+  digitalWrite(pin,HIGH);
+  delay(100);
+  digitalWrite(pin,LOW);
+  delay(100);
+}
+
+void phare_ON(int pin){
+  digitalWrite(pin,HIGH);
+}
+
+void phare_OFF(int pin){
+  digitalWrite(pin,LOW);
+}
+
+void setup() {
+  pinMode(led_gauche,OUTPUT);
+  pinMode(led_droite,OUTPUT);
+}
