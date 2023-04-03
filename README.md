@@ -16,8 +16,12 @@ ______________________________________________________________
 ## Hardware:  
 Grove sensors:  
 [LINK](https://www.seeedstudio.com/ "Grove Actuators/Sensors")
-  - Moteurs x2
+  - Moteurs pas à pas x1
   - Servo x1 ou roue bille libre
-  - 4 leds (rouge x2 jaune x2)
+  - 2 leds (jaune x2)
   - capteur ultrason (detection d'obstacles)
   - strcuture LEGO
+  
+## Software
+  - cf. /tesla pour voir le code embarqué
+  - **[A VENIR: code pour l'application de contrôle]** 
