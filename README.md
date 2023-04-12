@@ -23,5 +23,5 @@ Grove sensors:
   - strcuture LEGO
   
 ## Software
-  - cf. /tesla pour voir le code embarqué [LINK](https://github.com/kiso6/projet_cpp_4AESE/tree/main/tesla)
-  - **[A VENIR: code pour l'application de contrôle]** 
+  - cf. /dev_tesla pour voir le code embarqué [CODE EMBARQUE](https://github.com/kiso6/projet_cpp_4AESE/tree/main/dev_tesla)
+  - cf. /appli pour voir le code de l'appli APK [APPLI APK](https://github.com/kiso6/projet_cpp_4AESE/tree/main/appli)
