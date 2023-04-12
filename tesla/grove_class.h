@@ -10,11 +10,18 @@ protected :
   const int pin2{0};
   const int pin2mode{0};
 public :
+
+  Grove(int p1, int p1m): pin1(p1), pin1mode(p1m) {};
+  Grove(int p1, int p1m, int p2, int p2m): pin1(p1), pin1mode(p1m), pin2(p2), pin1mode(p1m){};;
+  virtual Init() = 0;
+  
+=======
   //constructors
   Grove(int p1, int p1m);
   Grove(int p1, int p1m, int p2, int p2m);
   //virtual foncitons to define
   //virtual void Init() = 0;
+
 };
 
 /*class Capteur : public Grove {
@@ -52,7 +59,17 @@ public:
 class Servo : public Actionneur {
 
 
+
+};
+
+class Moteur : public actionneur {
+
+  
+}
+
+=======
 };*/
+
 
 
 #endif
