@@ -4,42 +4,45 @@
 //Basic grove class
 class Grove {
 protected :
-  //default initialized to 0
   const int pin1{0};
   const int pin1mode{0};
   const int pin2{0};
   const int pin2mode{0};
 public :
-
-  Grove(int p1, int p1m): pin1(p1), pin1mode(p1m) {};
-  Grove(int p1, int p1m, int p2, int p2m): pin1(p1), pin1mode(p1m), pin2(p2), pin1mode(p1m){};;
-  virtual Init() = 0;
-  
-=======
-  //constructors
+  Grove();
   Grove(int p1, int p1m);
   Grove(int p1, int p1m, int p2, int p2m);
   //virtual foncitons to define
   //virtual void Init() = 0;
-
 };
 
-/*class Capteur : public Grove {
 
-
+class Capteur : public Grove {
+public:
+  Capteur();
+  Capteur(int p1,int p1m);
+  Capteur(int p1,int p1m,int p2,int p2m);
 };
 
+/*
 class Ultrason : public Capteur {
-
-
+private:
+    long duration(uint32_t timeout = 1000000L);
+public:
+    Ultrason(int pin);
+    long MeasureInCentimeters(uint32_t timeout = 1000000L);
+    long MeasureInMillimeters(uint32_t timeout = 1000000L);
+    long MeasureInInches(uint32_t timeout = 1000000L);
 };
 */
 class Actionneur : public Grove {
 public:
+  Actionneur();
   Actionneur(int p1,int p1m);
   Actionneur(int p1,int p1m,int p2,int p2m);
 };
 
+/*
 class Led : public Actionneur {
 public: 
   Led(int pin, int mode);
@@ -59,17 +62,7 @@ public:
 class Servo : public Actionneur {
 
 
-
-};
-
-class Moteur : public actionneur {
-
-  
-}
-
-=======
 };*/
-
 
 
 #endif
