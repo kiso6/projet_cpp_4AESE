@@ -3,14 +3,18 @@
 #include "grove_class.h"
 #include "phares.h"
 #include "klaxon.h"
+#include "motor.h"
 #include <Servo.h>
 #include <String>
+#include <Ticker.h>
 
 Servo direction;
+Ticker cligno;
 Ultrasonic ultrasonic(ULTRASONIC);
 Led Phare_Gauche(PHARE_G,OUTPUT);
 Led Phare_Droit(PHARE_D,OUTPUT);
 Buzzer Klaxon(KLAXON, OUTPUT);
+motor moteur(MOTEUR_P1,OUTPUT,MOTEUR_P2,OUTPUT); 
 
 bool Phare_D=false;
 bool Phare_G=false;
@@ -34,10 +38,11 @@ void setup()
 {
  direction.attach(DIRECTION);
  direction.write(pos);
- Serial.begin(BAUD);
+ // Serial.begin(BAUD);
  Phare_Gauche.Init(OUTPUT);
  Phare_Droit.Init(OUTPUT);
  Klaxon.Init(OUTPUT);
+ moteur.init_digital();
 }
 
 void loop()
@@ -67,4 +72,26 @@ void loop()
   Klax=true;
   Klaxon.klaxonner(100, Klax);
   Klax=false;
+  moteur.avant();
+  delay(1000);
+  moteur.stop();
+  delay(1000);
+  moteur.arriere();
+  delay(1000);
+
+  moteur.stop();
+  delay(2000);
+  moteur.avant();
+  delay(2000);
+  moteur.stop();
+  delay(2000);
+  moteur.arriere();
+  delay(2000);
+  moteur.stop();
+  delay(2000);
+
+
+
+
+
 }
