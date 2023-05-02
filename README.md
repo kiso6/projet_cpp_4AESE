@@ -26,7 +26,7 @@ Grove sensors:
   - cf. /dev_tesla pour voir le code embarqué [CODE EMBARQUE](https://github.com/kiso6/projet_cpp_4AESE/tree/main/dev_tesla)
   - cf. /appli pour voir le code de l'appli APK [APPLI APK](https://github.com/kiso6/projet_cpp_4AESE/tree/main/appli)
   
-##UML Description
-## User case
+## UML Description
+### Use cases
 ![user case](https://user-images.githubusercontent.com/128903240/235663121-4138d28a-abcd-4ec0-8b22-39a8af73595d.png)
 
