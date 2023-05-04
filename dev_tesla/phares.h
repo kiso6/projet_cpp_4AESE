@@ -8,8 +8,9 @@ public:
   Led(int pin, int mode);
   Led(Led&);
   void Init(int);
-  void clignotant(int);
+  void clignotant();
   void phare(bool);
+
 };
 
 #endif

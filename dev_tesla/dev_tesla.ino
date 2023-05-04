@@ -9,100 +9,138 @@
 #include <Servo.h>
 #include <String>
 #include <Ticker.h>
-//Servo direction;
-//Ticker cligno;
-/*
-Ultrasonic ultrasonic(ULTRASONIC);
-Led Phare_Gauche(PHARE_G,OUTPUT);
-Led Phare_Droit(PHARE_D,OUTPUT);
-Buzzer Klaxon(KLAXON, OUTPUT);
-motor moteur(MOTEUR_P1,OUTPUT,MOTEUR_P2,OUTPUT); 
-*/
+
+//wifi configuration
+
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+#include <WiFiUdp.h>
+
+#ifndef APSSID
+#define APSSID "Voiture"
+#endif
+
+WiFiUDP Udp;
+unsigned int localUdpPort = 4210;
+char incomingPacket[256];
+
+const char *ssid = APSSID;
+
+
+bool left;
+bool right;
+bool gaz;
+bool brake;
+bool warning;
+bool klaxon;
+//-----------
+
 Voiturette* meccano=new Voiturette();
 
-bool Phare_D=false;
-bool Phare_G=false;
+Ticker clignoG;
+Ticker clignoD;
+bool clignoG_on;
+bool clignoD_on;
 long RangeInCentimeters;
 int pos;
 
-void rotate_left(int angle, Servo out){
-  out.write(-angle);
+// void rotate_left(int angle, Servo out){
+//   out.write(-angle);
+// }
+
+// void rotate_right(int angle, Servo out){
+//   out.write(+angle);
+// }
+
+void clignoterG() {
+  if (clignoG_on == 1) {
+    meccano->PhG.clignotant();
+  }
+  else {
+    meccano->PhG.phare(0);
+  }
 }
 
-void rotate_right(int angle, Servo out){
-  out.write(+angle);
+void clignoterD() {
+  if (clignoD_on == 1) {
+    meccano->PhD.clignotant();
+  }
+  else {
+    meccano->PhD.phare(0);
+  }
 }
 
 void setup()
 {
- pos =170;
- meccano->direction.write(pos);
- Serial.begin(BAUD);
+  Serial.begin(BAUD);
+  pos =170;
+  meccano->direction.write(pos);
+
+  //wifi intit
+  WiFi.softAP(ssid);
+  IPAddress myIP = WiFi.softAPIP();
+  Udp.begin(localUdpPort);
+
+  Serial.print("AP IP address: ");
+  Serial.println(myIP);
+
+  clignoG.attach(0.2, clignoterG);
+  clignoD.attach(0.2, clignoterD);
+
 }
 
 void loop()
 {
- meccano->Moteur.avant();
- delay(2000);
- meccano->Moteur.arriere();
- delay(2000);
- meccano->Moteur.stop();
- delay(2000);
- meccano->PhD.clignotant(150);
- meccano->PhG.clignotant(150);
- delay(2000);
- RangeInCentimeters=meccano->detect.MeasureInCentimeters();
- Serial.print(String(RangeInCentimeters));
- delay(2000);
- for (pos = 150; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    meccano->direction.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15ms for the servo to reach the position
+  int packetSize = Udp.parsePacket();
+  if (packetSize)
+  {
+    int len = Udp.read(incomingPacket, 255);
+    if (len > 0)
+    {
+      incomingPacket[len] = '\0';
+      
+      left = incomingPacket[0] - 48;
+      right = incomingPacket[1] - 48;
+      gaz = incomingPacket[2] - 48;
+      brake = incomingPacket[3] - 48;
+      warning = incomingPacket[4] - 48;
+      klaxon = incomingPacket[5] - 48;
+
+      if (gaz == 1){
+        meccano->Moteur.avant();
+      }
+      else if (brake == 1){
+        meccano->Moteur.arriere();
+      }
+      else {
+        meccano->Moteur.stop();
+      }
+
+      if (left == 1){
+        meccano->direction.write(150);
+        clignoD_on = warning;
+        clignoG_on = 1;
+      }
+      else if (right == 1){
+        meccano->direction.write(180);
+        clignoG_on = warning;
+        clignoD_on = 1;
+      }
+      else {
+        meccano->direction.write(165);
+        clignoG_on = warning;
+        clignoD_on = warning;
+      }
+      meccano->Klax.klaxonner(klaxon);
+    }
   }
-  delay(1000);
-  for (pos = 180; pos >= 160; pos -= 1) { // goes from 180 degrees to 0 degrees
-    meccano->direction.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15ms for the servo to reach the position
-  }
 
- 
- /*Phare_G=true;
- Phare_D=true;
- Phare_Droit.clignotant(150);
- delay(100);
- Phare_Gauche.clignotant(2000);
 
- for (pos = 150; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    //direction.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15ms for the servo to reach the position
-  }
-  delay(1000);
-  for (pos = 180; pos >= 160; pos -= 1) { // goes from 180 degrees to 0 degrees
-    //direction.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15ms for the servo to reach the position
-  }
+  RangeInCentimeters=meccano->detect.MeasureInCentimeters();
+  Serial.println(String(RangeInCentimeters));
 
-  RangeInCentimeters=ultrasonic.MeasureInCentimeters();
-  String distance_cm=String(RangeInCentimeters);
-  Serial.print(distance_cm);//0~400cm
-  Serial.println(" cm");
 
-  //delay(100);
-  //Klax=true;
-  //Klaxon.klaxonner(100, Klax);
-  //Klax=false;
 
-  /*
-  moteur.stop();
-  delay(2000);
-  moteur.avant();
-  delay(2000);
-  moteur.stop();
-  delay(2000);
-  moteur.arriere();
-  delay(2000);
-  moteur.stop();
-  delay(2000);*/
+
 
 }
