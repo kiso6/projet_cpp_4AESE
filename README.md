@@ -6,6 +6,9 @@ _Raphael Tessier et Kilian Soual_
 **_[ATTENTION] Image pas forcément contractuelle :_**  
 ![Image pas forcemment contractuelle](https://i.gaw.to/vehicles/photos/40/25/402549-2021-tesla-model-x.jpg?640x400)  
   
+## Description:  
+Le projet consiste en la réalisation d'une voiturette télécommandée (via une application mobile). Le projet est porté par une carte ESP266 et la communication avec la télécommande se fait en WiFi. Le code embarqué est en C++ et l'application mobile à été réalisée avec le MIT App Inventor. La structure de la voiturette est entièrement réalisée en Meccano.  
+  
 
 ## Specifications:  
 **Board**: ESP8266 + Shield Grove  
