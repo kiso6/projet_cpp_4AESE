@@ -6,6 +6,7 @@ class Led : public Actionneur {
 public: 
   Led();
   Led(int pin, int mode);
+  Led(Led&);
   void Init(int);
   void clignotant(int);
   void phare(bool);

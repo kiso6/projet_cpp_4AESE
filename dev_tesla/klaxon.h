@@ -6,6 +6,7 @@ class Buzzer: public Actionneur{
 public:
   Buzzer();
   Buzzer(int pin, int mode);
+  Buzzer(Buzzer&);
   void Init(int);
   void klaxonner(int,bool);
 };

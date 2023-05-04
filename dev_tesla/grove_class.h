@@ -3,7 +3,7 @@
 
 //Basic grove class
 class Grove {
-protected :
+public :
   const int pin1{0};
   const int pin1mode{0};
   const int pin2{0};

@@ -1,6 +1,6 @@
+#include <Arduino.h>
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
-#include <Arduino.h>
 
 #define BAUD 9600
 #define MOTEUR_P1 5

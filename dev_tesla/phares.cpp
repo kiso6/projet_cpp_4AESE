@@ -7,6 +7,7 @@ using namespace std;
 //LED DEFINE
 Led::Led(){}
 Led::Led(int pin,int mode):Actionneur(pin,mode){}
+Led::Led(Led& Ld):Actionneur(Ld.pin1,Ld.pin1mode){}
 void Led::Init(int mode){pinMode(pin1,pin1mode);}
 
 void Led::clignotant(int period){

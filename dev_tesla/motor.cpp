@@ -5,6 +5,7 @@ using namespace std;
 
 motor::motor(){}
 motor::motor(int pin1, int pin1mode, int pin2, int pin2mode):Actionneur(pin1, pin1mode, pin2,pin2mode){}
+motor::motor(motor& mot):Actionneur(mot.pin1, mot.pin1mode, mot.pin2,mot.pin2mode){}
 motor::motor(int pin1,int pin1mode):Actionneur(pin1, pin1mode){};
 
 void motor::init_digital(){
@@ -28,3 +29,5 @@ void motor::stop(){
   digitalWrite(pin1, 0);
   digitalWrite(pin2, 0);
 }
+
+motor::~motor(){}
