@@ -14,13 +14,14 @@ _Raphael Tessier et Kilian Soual_
 ![Pinout](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP8266-NodeMCU-kit-12-E-pinout-gpio-pin.png?quality=100&strip=all&ssl=1)  
 
 ## Hardware:  
-Grove sensors:  
+**Matériel** :  
 [LINK](https://www.seeedstudio.com/ "Grove Actuators/Sensors")
-  - Moteurs pas à pas x1
-  - Servo x1 ou roue bille libre
-  - 2 leds (jaune x2)
-  - capteur ultrason (detection d'obstacles)
-  - strcuture LEGO
+  - Moteur DC 6V de voiturette Meccano  
+  - Deux relais pour faire de la marche avant et de la marche arrière
+  - Servomoteur x1 pour la direction
+  - 2 leds (jaune x2) pour les phares/clignotants
+  - capteur ultrason pour la detection d'obstacles
+  - strcuture Meccano
   
 ## Software
   - cf. /dev_tesla pour voir le code embarqué [CODE EMBARQUE](https://github.com/kiso6/projet_cpp_4AESE/tree/main/dev_tesla)
