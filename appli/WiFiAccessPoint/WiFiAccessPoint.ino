@@ -5,8 +5,7 @@
 #include <WiFiUdp.h>
 
 #ifndef APSSID
-#define APSSID "ESPap"
-#define APPSK "thereisnospoon"
+#define APSSID "Voiture"
 #endif
 
 WiFiUDP Udp;
@@ -16,7 +15,7 @@ char incomingPacket[256];
 
 /* Set these to your desired credentials. */
 const char *ssid = APSSID;
-const char *password = APPSK;
+
 
 bool left;
 bool right;
@@ -32,7 +31,7 @@ void setup() {
   Serial.println();
   Serial.print("Configuring access point...");
   /* You can remove the password parameter if you want the AP to be open. */
-  WiFi.softAP(ssid, password);
+  WiFi.softAP(ssid);
 
   IPAddress myIP = WiFi.softAPIP();
   Serial.print("AP IP address: ");

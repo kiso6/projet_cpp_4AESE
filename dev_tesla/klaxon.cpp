@@ -10,10 +10,8 @@ Buzzer::Buzzer(Buzzer& Buzz):Actionneur(Buzz.pin1,Buzz.pin1mode){}
 
 void Buzzer::Init(int mode){pinMode(pin1,pin1mode);}
 
-void Buzzer::klaxonner(int duree, bool IsOn){
-  if (IsOn){
-    digitalWrite(pin1,HIGH);
-    delay(duree);
-    digitalWrite(pin1,LOW);
-  }
+void Buzzer::klaxonner(bool IsOn){
+  digitalWrite(pin1,IsOn);
+
+
 }

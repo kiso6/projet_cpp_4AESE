@@ -8,7 +8,7 @@ public:
   Buzzer(int pin, int mode);
   Buzzer(Buzzer&);
   void Init(int);
-  void klaxonner(int,bool);
+  void klaxonner(bool);
 };
 
 #endif

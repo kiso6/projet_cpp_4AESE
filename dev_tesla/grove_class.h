@@ -57,7 +57,7 @@ public:
   void Init(int);
   void klaxonner(int,bool);
 };
-
+*/
 /*
 class Servo : public Actionneur {
 
