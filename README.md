@@ -32,5 +32,7 @@ Le projet consiste en la réalisation d'une voiturette télécommandée (via une
   
 ## UML Description
 ### Use cases
-![user case](https://user-images.githubusercontent.com/128903240/235663121-4138d28a-abcd-4ec0-8b22-39a8af73595d.png)
+![user case](https://user-images.githubusercontent.com/128903240/235663121-4138d28a-abcd-4ec0-8b22-39a8af73595d.png)  
+### Diagramme des classes de la Voiturette  
+![diagramme_classes_2](https://i.ibb.co/jhXwkhN/Diagramme-vierge.png)
 
