@@ -5,6 +5,17 @@ _Raphael Tessier et Kilian Soual_
 
 **_[ATTENTION] Image pas forcément contractuelle :_**  
 ![Image pas forcemment contractuelle](https://i.gaw.to/vehicles/photos/40/25/402549-2021-tesla-model-x.jpg?640x400)  
+
+## Sommaire:  
+  1.[Description](https://github.com/kiso6/projet_cpp_4AESE#description)  
+  2.[Specifications](https://github.com/kiso6/projet_cpp_4AESE#specifications)  
+  3.[Hardware](https://github.com/kiso6/projet_cpp_4AESE#hardware)  
+  4.[Software](https://github.com/kiso6/projet_cpp_4AESE#software)  
+  5.[UML Description](https://github.com/kiso6/projet_cpp_4AESE#uml-description)  
+    5.1.[Diagramme des uses cases](https://github.com/kiso6/projet_cpp_4AESE#use-cases)  
+    5.2.[Diagrammes de séquences](https://github.com/kiso6/projet_cpp_4AESE#diagrammes-de-s%C3%A9quence)  
+    5.3.[Diagrammes des classes](https://github.com/kiso6/projet_cpp_4AESE#diagramme-des-classes)  
+    
   
 ## Description:  
 Le projet consiste en la réalisation d'une voiturette télécommandée (via une application mobile). Le projet est porté par une carte ESP266 et la communication avec la télécommande se fait en WiFi. Le code embarqué est en C++ et l'application mobile à été réalisée avec le MIT App Inventor. La structure de la voiturette est entièrement réalisée en Meccano.  
