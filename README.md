@@ -47,9 +47,9 @@ Le projet consiste en la réalisation d'une voiturette télécommandée (via une
 ### Diagrammes de séquence  
 Ici, nous illustrons deux cas d'utilisation classiques: le cas où l'utilisateur utilise la voiturette en utilisant l'application (1), et le cas ou la voiturette détecte un danger(2).  
 #### Diagramme 1  
-![séquence_1](https://i.ibb.co/rGPwkZM/Diagramme-s-quence-g-n.png)  
+![séquence_1](https://i.ibb.co/HpJw1q8/s-quence-g-n-ral.png)  
 #### Diagramme 2  
-![séquence_2](https://i.ibb.co/cTNppyq/DIAGRAMME-seq-ultrasonic.png)  
+![séquence_2](https://i.ibb.co/gwf9wZx/Untitled.png)  
 ### Diagramme des classes
 ![diagramme_classes_global](https://i.ibb.co/Tq1Vfgr/Diagramme-Classes-1.png)
 ### Diagramme des classes de la Voiturette  
