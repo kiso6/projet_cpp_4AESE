@@ -12,9 +12,9 @@ _Raphael Tessier et Kilian Soual_
   3.[Hardware](https://github.com/kiso6/projet_cpp_4AESE#hardware)  
   4.[Software](https://github.com/kiso6/projet_cpp_4AESE#software)  
   5.[UML Description](https://github.com/kiso6/projet_cpp_4AESE#uml-description)  
-      5.1.[Diagramme des uses cases](https://github.com/kiso6/projet_cpp_4AESE#use-cases)  
-      5.2.[Diagrammes de séquences](https://github.com/kiso6/projet_cpp_4AESE#diagrammes-de-s%C3%A9quence)  
-      5.3.[Diagrammes des classes](https://github.com/kiso6/projet_cpp_4AESE#diagramme-des-classes)  
+     5.1.[Diagramme des uses cases](https://github.com/kiso6/projet_cpp_4AESE#use-cases)  
+     5.2.[Diagrammes de séquences](https://github.com/kiso6/projet_cpp_4AESE#diagrammes-de-s%C3%A9quence)  
+     5.3.[Diagrammes des classes](https://github.com/kiso6/projet_cpp_4AESE#diagramme-des-classes)  
     
   
 ## Description:  
