@@ -17,13 +17,13 @@ void motor::init_digital(){
 
 void motor::avant(){
   digitalWrite(pin2, 0);
-  delay(50);
+  //delay(50);
   digitalWrite(pin1, 1);
 }
 
 void motor::arriere(){
   digitalWrite(pin1, 0);
-  delay(50);
+  //delay(50);
   digitalWrite(pin2, 1); 
 }
 

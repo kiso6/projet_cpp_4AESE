@@ -2,6 +2,7 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+#define DANGER_ZONE 40
 #define BAUD 9600
 #define MOTEUR_P1 D4
 #define MOTEUR_P2 4

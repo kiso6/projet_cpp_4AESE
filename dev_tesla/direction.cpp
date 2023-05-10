@@ -7,6 +7,7 @@ dir::dir():Actionneur(){}
 
 void dir::init(int pin){
   direction.attach(pin);
+  direction.write(165);
 }
 void dir::ecrire(int pos){
   direction.write(pos);

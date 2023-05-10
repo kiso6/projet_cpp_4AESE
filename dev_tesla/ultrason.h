@@ -12,7 +12,7 @@ public:
     ultrason(int pin);
     long MeasureInCentimeters(uint32_t timeout = 1000000L);
     long MeasureInMillimeters(uint32_t timeout = 1000000L);
-    long MeasureInInches(uint32_t timeout = 1000000L);
+    long MeasureInInches(uint32_t timeout = 1000L);
     bool Danger(long dist_cm);
 };
 

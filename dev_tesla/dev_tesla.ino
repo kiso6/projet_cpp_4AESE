@@ -77,8 +77,6 @@ void clignoterD() {
 void setup()
 {
   Serial.begin(BAUD);
-  pos =170;
-  meccano->direction.ecrire(pos);
 
   //wifi intit
   WiFi.softAP(ssid);
@@ -99,11 +97,26 @@ void loop()
 
   RangeInCentimeters=meccano->detect.MeasureInCentimeters();
   Serial.println(String(RangeInCentimeters));
-  if (RangeInCentimeters<=10 & RangeInCentimeters!=0){
+  if (RangeInCentimeters<=DANGER_ZONE & RangeInCentimeters!=0){
         danger=true;
+        meccano->Moteur.arriere();
+        delay(100);
         meccano->Moteur.stop();
   }else{
     danger=false;
+  }
+
+  
+  if (gaz ==1 & !danger){
+    meccano->Moteur.stop();
+    meccano->Moteur.avant();
+  }
+  else if (brake == 1){
+    meccano->Moteur.stop();
+    meccano->Moteur.arriere();
+  }
+  else {
+    meccano->Moteur.stop();
   }
 
   if (packetSize)
@@ -119,19 +132,6 @@ void loop()
       brake = incomingPacket[3] - 48;
       warning = incomingPacket[4] - 48;
       klaxon = incomingPacket[5] - 48;
-
-
-      if (gaz ==1 & !danger){
-        meccano->Moteur.stop();
-        meccano->Moteur.avant();
-      }
-      else if (brake == 1){
-        meccano->Moteur.stop();
-        meccano->Moteur.arriere();
-      }
-      else {
-        meccano->Moteur.stop();
-      }
 
       if (left == 1){
         //meccano->direction.write(150);
