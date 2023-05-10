@@ -14,6 +14,7 @@ public :
   Grove(int p1, int p1m, int p2, int p2m);
   //virtual foncitons to define
   //virtual void Init() = 0;
+  ~Grove();
 };
 
 
@@ -22,6 +23,7 @@ public:
   Capteur();
   Capteur(int p1,int p1m);
   Capteur(int p1,int p1m,int p2,int p2m);
+  ~Capteur();
 };
 
 /*
@@ -40,6 +42,7 @@ public:
   Actionneur();
   Actionneur(int p1,int p1m);
   Actionneur(int p1,int p1m,int p2,int p2m);
+  ~Actionneur();
 };
 
 /*

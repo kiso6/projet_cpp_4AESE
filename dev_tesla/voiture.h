@@ -2,7 +2,9 @@
 #include "phares.h"
 #include "klaxon.h"
 #include "motor.h"
-#include "Ultrasonic.h"
+//#include "Ultrasonic.h"
+#include "ultrason.h"
+#include "direction.h"
 #include "constants.h"
 #include <Servo.h>
 #include <Arduino.h>
@@ -15,8 +17,8 @@ public:
   Led PhD=Led(PHARE_D,OUTPUT);
   Led PhG=Led(PHARE_G,OUTPUT);
   Buzzer Klax=Buzzer(KLAXON,OUTPUT);
-  Ultrasonic detect=Ultrasonic(ULTRASONIC);
-  Servo direction;
+  ultrason detect=ultrason(ULTRASONIC);
+  dir direction;
   Voiturette();
   ~Voiturette();
 };

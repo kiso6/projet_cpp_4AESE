@@ -15,3 +15,5 @@ void Buzzer::klaxonner(bool IsOn){
 
 
 }
+
+Buzzer::~Buzzer(){}

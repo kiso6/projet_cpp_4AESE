@@ -3,7 +3,7 @@
 #define CONSTANTS_H
 
 #define BAUD 9600
-#define MOTEUR_P1 5
+#define MOTEUR_P1 D4
 #define MOTEUR_P2 4
 #define DIRECTION D3
 #define PHARE_G D5

@@ -9,6 +9,7 @@ public:
   Buzzer(Buzzer&);
   void Init(int);
   void klaxonner(bool);
+  ~Buzzer();
 };
 
 #endif

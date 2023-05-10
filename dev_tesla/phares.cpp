@@ -18,3 +18,5 @@ void Led::clignotant(){
 void Led::phare(bool IsOn){
   digitalWrite(pin1,IsOn);
 }
+
+Led::~Led(){}

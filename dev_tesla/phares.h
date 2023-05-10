@@ -10,7 +10,7 @@ public:
   void Init(int);
   void clignotant();
   void phare(bool);
-
+  ~Led();
 };
 
 #endif

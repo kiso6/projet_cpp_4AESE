@@ -6,16 +6,19 @@ using namespace std;
 Grove::Grove(){}
 Grove::Grove(int p1,int p1m):pin1{p1},pin1mode{p1m}{}
 Grove::Grove(int p1,int p1m,int p2,int p2m):pin1{p1},pin1mode{p1m},pin2{p2},pin2mode{p2m}{}
+Grove::~Grove(){}
 
 //Capteurs
 Capteur::Capteur():Grove(){}
 Capteur::Capteur(int p1, int p1m):Grove(p1,p1m){}
 Capteur::Capteur(int p1, int p1m,int p2,int p2m):Grove(p1,p1m,p2,p2m){}
+Capteur::~Capteur(){}
 
 //ACTIONNEURS DEFINE
 Actionneur::Actionneur():Grove(){}
 Actionneur::Actionneur(int p1,int p1m):Grove(p1,p1m){}
 Actionneur::Actionneur(int p1,int p1m,int p2,int p2m):Grove(p1,p1m,p2,p2m){}
+Actionneur::~Actionneur(){}
 
 /*
 //LED DEFINE

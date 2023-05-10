@@ -3,9 +3,11 @@
 #include "phares.h"
 #include "klaxon.h"
 #include "motor.h"
+#include "ultrason.h"
+#include "direction.h"
 #include "voiture.h"
 
-#include "Ultrasonic.h"
+//#include "Ultrasonic.h"
 #include <Servo.h>
 #include <String>
 #include <Ticker.h>
@@ -33,6 +35,7 @@ bool gaz;
 bool brake;
 bool warning;
 bool klaxon;
+bool danger=false;
 //-----------
 
 Voiturette* meccano=new Voiturette();
@@ -51,6 +54,7 @@ int pos;
 // void rotate_right(int angle, Servo out){
 //   out.write(+angle);
 // }
+
 
 void clignoterG() {
   if (clignoG_on == 1) {
@@ -74,7 +78,7 @@ void setup()
 {
   Serial.begin(BAUD);
   pos =170;
-  meccano->direction.write(pos);
+  meccano->direction.ecrire(pos);
 
   //wifi intit
   WiFi.softAP(ssid);
@@ -92,6 +96,16 @@ void setup()
 void loop()
 {
   int packetSize = Udp.parsePacket();
+
+  RangeInCentimeters=meccano->detect.MeasureInCentimeters();
+  Serial.println(String(RangeInCentimeters));
+  if (RangeInCentimeters<=10 & RangeInCentimeters!=0){
+        danger=true;
+        meccano->Moteur.stop();
+  }else{
+    danger=false;
+  }
+
   if (packetSize)
   {
     int len = Udp.read(incomingPacket, 255);
@@ -106,10 +120,13 @@ void loop()
       warning = incomingPacket[4] - 48;
       klaxon = incomingPacket[5] - 48;
 
-      if (gaz == 1){
+
+      if (gaz ==1 & !danger){
+        meccano->Moteur.stop();
         meccano->Moteur.avant();
       }
       else if (brake == 1){
+        meccano->Moteur.stop();
         meccano->Moteur.arriere();
       }
       else {
@@ -117,30 +134,26 @@ void loop()
       }
 
       if (left == 1){
-        meccano->direction.write(150);
+        //meccano->direction.write(150);
+        meccano->direction.gauche();
         clignoD_on = warning;
         clignoG_on = 1;
       }
       else if (right == 1){
-        meccano->direction.write(180);
+        //meccano->direction.write(180);
+        meccano->direction.droite();
         clignoG_on = warning;
         clignoD_on = 1;
       }
       else {
-        meccano->direction.write(165);
+        //meccano->direction.write(165);
+        meccano->direction.tout_droit();
         clignoG_on = warning;
         clignoD_on = warning;
       }
       meccano->Klax.klaxonner(klaxon);
     }
   }
-
-
-  RangeInCentimeters=meccano->detect.MeasureInCentimeters();
-  Serial.println(String(RangeInCentimeters));
-
-
-
 
 
 }
