@@ -2,6 +2,7 @@
 #ifndef KLAXON_H
 #define KLAXON_H
 
+//implementation de la classe buzzer
 class Buzzer: public Actionneur{
 public:
   Buzzer();

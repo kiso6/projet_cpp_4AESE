@@ -61,16 +61,16 @@ long ultrason::MeasureInCentimeters(uint32_t timeout) {
     return RangeInCentimeters;
 }
 
-/*The measured distance from the range 0 to 4000 Millimeters*/
+/*The measured distance from the range 0 to 4000 Millimeters
 long ultrason::MeasureInMillimeters(uint32_t timeout) {
     long RangeInMillimeters;
     RangeInMillimeters = duration(timeout) * (10 / 2) / 29;
     return RangeInMillimeters;
-}
+}*/
 
-/*The measured distance from the range 0 to 157 Inches*/
+/*The measured distance from the range 0 to 157 Inches
 long ultrason::MeasureInInches(uint32_t timeout) {
     long RangeInInches;
     RangeInInches = duration(timeout) / 74 / 2;
     return RangeInInches;
-}
+}*/

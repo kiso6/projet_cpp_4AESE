@@ -11,7 +11,6 @@
 #include <Arduino.h>
 
 Voiturette::Voiturette(){
-  //direction.attach(DIRECTION);
   direction.init(DIRECTION);
   PhG.Init(OUTPUT);
   PhD.Init(OUTPUT);

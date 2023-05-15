@@ -2,6 +2,7 @@
 #ifndef PHARES_H
 #define PHARES_H
 
+//implementation de la classe Led
 class Led : public Actionneur {
 public: 
   Led();
