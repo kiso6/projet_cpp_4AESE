@@ -1,7 +1,7 @@
 # RAPPORT
 ## _Projet de C++ de 4ème année AE - SE: Voiturette télécommandée_  
 
-_Raphael Tessier et Kilian Soual_  
+_Raphael Tessier et Kilian Soual_   
 
 ![Image pas forcemment contractuelle](https://i.ibb.co/GcdSxjs/20230510-180536.jpg)  
 
