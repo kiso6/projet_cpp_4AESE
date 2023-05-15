@@ -2,16 +2,16 @@
 #ifndef PHARES_H
 #define PHARES_H
 
-//implementation de la classe Led
+//definition de la classe Led
 class Led : public Actionneur {
 public: 
-  Led();
-  Led(int pin, int mode);
-  Led(Led&);
-  void Init(int);
-  void clignotant();
-  void phare(bool);
-  ~Led();
+  Led(); //constructeur par defaut
+  Led(int pin, int mode); //constructeur paramétré
+  Led(Led&); //constructeur de recopie
+  void Init(int); //initialisation des pins  
+  void clignotant(); //implementation du clignotant
+  void phare(bool); // activation d'un mode phares
+  ~Led(); //destructeur
 };
 
 #endif

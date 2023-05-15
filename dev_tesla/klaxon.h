@@ -2,15 +2,15 @@
 #ifndef KLAXON_H
 #define KLAXON_H
 
-//implementation de la classe buzzer
+//definition de la classe buzzer
 class Buzzer: public Actionneur{
 public:
-  Buzzer();
-  Buzzer(int pin, int mode);
-  Buzzer(Buzzer&);
-  void Init(int);
-  void klaxonner(bool);
-  ~Buzzer();
+  Buzzer(); //constructeur par defaut
+  Buzzer(int pin, int mode);//constructeur paramétré 
+  Buzzer(Buzzer&);//constructeur de recopie
+  void Init(int); //initialisation des pins
+  void klaxonner(bool); //fonction permettant de klaxonner
+  ~Buzzer(); //destructeur 
 };
 
 #endif

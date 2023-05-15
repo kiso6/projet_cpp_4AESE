@@ -11,6 +11,11 @@
 #ifndef VOITURE_H
 #define VOITURE_H
 
+
+/* définition de la classe voiturette qui est utlisée uniquement dans le main 
+cette classe n'a pour but que de proposer une interface pour simplifier le main et le rendre plus lisible.
+La protection des attributs n'est donc pas nécessaire.
+*/
 class Voiturette{
 public: 
   motor Moteur=motor(MOTEUR_P1,OUTPUT,MOTEUR_P2,OUTPUT);

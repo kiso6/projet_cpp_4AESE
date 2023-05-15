@@ -4,6 +4,12 @@
 #include "Arduino.h"
 #include "ultrason.h"
 
+
+/*********** LES FONCTIONS POUR LE CAPTEUR ULTRASON
+SONT ISSUES DE LA LIBRAIRIE ULTRASONIC.H (disponible dans le fichier source du projet) 
+TROUVEES SUR LE SITE www.seeed.cc || 
+ICI ELLES SONT UTILISEES/ENCAPSULEES DANS UNE CLASSE DEFINIE PAR NOS SOINS.
+************/
 #ifdef ARDUINO_ARCH_STM32F4
 
 static uint32_t MicrosDiff(uint32_t begin, uint32_t end) {
@@ -54,23 +60,9 @@ long ultrason::duration(uint32_t timeout) {
     return duration;
 }
 
-/*The measured distance from the range 0 to 400 Centimeters*/
+// Mesure la distance en centimètres avec une portée de 0 à 400 cm
 long ultrason::MeasureInCentimeters(uint32_t timeout) {
     long RangeInCentimeters;
     RangeInCentimeters = duration(timeout) / 29 / 2;
     return RangeInCentimeters;
 }
-
-/*The measured distance from the range 0 to 4000 Millimeters
-long ultrason::MeasureInMillimeters(uint32_t timeout) {
-    long RangeInMillimeters;
-    RangeInMillimeters = duration(timeout) * (10 / 2) / 29;
-    return RangeInMillimeters;
-}*/
-
-/*The measured distance from the range 0 to 157 Inches
-long ultrason::MeasureInInches(uint32_t timeout) {
-    long RangeInInches;
-    RangeInInches = duration(timeout) / 74 / 2;
-    return RangeInInches;
-}*/

@@ -10,6 +10,8 @@
 #include "direction.h"
 #include <Arduino.h>
 
+
+/*Implementation de la classe voiturette*/
 Voiturette::Voiturette(){
   direction.init(DIRECTION);
   PhG.Init(OUTPUT);
