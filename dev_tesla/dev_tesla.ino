@@ -68,6 +68,7 @@ void clignoterD() {
   }
 }
 
+
 //-----------------------------------------
 
 void setup()
@@ -94,7 +95,7 @@ void loop()
 
   RangeInCentimeters=meccano->detect.MeasureInCentimeters();
   Serial.println(String(RangeInCentimeters));
-  if (RangeInCentimeters<=DANGER_ZONE & RangeInCentimeters!=0){
+  if ((RangeInCentimeters<=DANGER_ZONE) & (RangeInCentimeters!=0)){
         danger=true;
         meccano->Moteur.arriere();
         delay(100);
@@ -121,15 +122,25 @@ void loop()
     int len = Udp.read(incomingPacket, 255);
     if (len > 0)
     {
-      incomingPacket[len] = '\0';
-      
-      left = incomingPacket[0] - 48;
-      right = incomingPacket[1] - 48;
-      gaz = incomingPacket[2] - 48;
-      brake = incomingPacket[3] - 48;
-      warning = incomingPacket[4] - 48;
-      klaxon = incomingPacket[5] - 48;
-
+      try{
+        if (len != 6) {throw -1;}
+        incomingPacket[len] = '\0';
+        left = incomingPacket[0] - 48;
+        right = incomingPacket[1] - 48;
+        gaz = incomingPacket[2] - 48;
+        brake = incomingPacket[3] - 48;
+        warning = incomingPacket[4] - 48;
+        klaxon = incomingPacket[5] - 48;
+      }
+      catch (int e) {
+        Serial.println("wrong size of udp packet");
+        left = 0;
+        right = 0;
+        gaz = 0;
+        brake = 0;
+        warning = 0;
+        klaxon = 0;
+      }
       if (left == 1){
         meccano->direction.gauche();
         clignoD_on = warning;
