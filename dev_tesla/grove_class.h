@@ -8,15 +8,16 @@ protected :
 /*seuls attributs manipulés pour l'ensemble des classes du projet, ici en protected pour être accessibles par les classes filles
 4 attributs, 2 pins et 2 pinmodes pour être capables de gérer tous les cas
 */
-  const int pin1{0};
-  const int pin1mode{0};
-  const int pin2{0};
-  const int pin2mode{0};
+  int pin1{0};
+  int pin1mode{0};
+  int pin2{0};
+  int pin2mode{0};
 public :
 //pas de methodes propre à la classe grove, on ne trouve que des constructeurs et destructeurs
   Grove();
   Grove(int p1, int p1m);
   Grove(int p1, int p1m, int p2, int p2m);
+  Grove& operator=(const Grove& G);
   ~Grove();
 };
 

@@ -16,9 +16,10 @@
 #include <WiFiUdp.h>
 
 #ifndef APSSID
-#define APSSID "Voiture"
+#define APSSID "Voiture" //configuration du nom du pt d'accès wifi
 #endif
 
+//declaration de l'interface UDP
 WiFiUDP Udp;
 unsigned int localUdpPort = 4210;
 char incomingPacket[256];
@@ -91,20 +92,24 @@ void setup()
 
 void loop()
 {
+  //reception du paquet UDP
   int packetSize = Udp.parsePacket();
 
+  //mesure de la distance critique + verification de la danger_zone
   RangeInCentimeters=meccano->detect.MeasureInCentimeters();
-  Serial.println(String(RangeInCentimeters));
+  Serial.println(String(RangeInCentimeters)); //debug
   if ((RangeInCentimeters<=DANGER_ZONE) & (RangeInCentimeters!=0)){
         danger=true;
         meccano->Moteur.arriere();
         delay(100);
         meccano->Moteur.stop();
   }else{
-    danger=false;
+    danger=false; //set danger false si pas de danger
   }
 
-  
+  /* affectation des commandes de gaz à chaque tour de boucle
+    pour tenir compte de la présence de dangers potentiels
+  */
   if (gaz ==1 & !danger){
     meccano->Moteur.stop();
     meccano->Moteur.avant();
@@ -119,13 +124,18 @@ void loop()
 
   if (packetSize)
   {
+    //analyse du paquet UDP
     int len = Udp.read(incomingPacket, 255);
     if (len > 0)
     {
+      /*gestion des exception: 
+        si le paquet est de mauvaise taille, on bloque la voiture
+        gère également les erreurs d'accès au paquet
+      */
       try{
         if (len != 6) {throw -1;}
         incomingPacket[len] = '\0';
-        left = incomingPacket[0] - 48;
+        left = incomingPacket[0] - 48; //translation du char en int 
         right = incomingPacket[1] - 48;
         gaz = incomingPacket[2] - 48;
         brake = incomingPacket[3] - 48;
@@ -141,6 +151,10 @@ void loop()
         warning = 0;
         klaxon = 0;
       }
+      /*màj des consignes de direction,
+        clignotants et klaxon, uniquement
+        en case de màj des consignes de l'utilisateur
+      */
       if (left == 1){
         meccano->direction.gauche();
         clignoD_on = warning;
