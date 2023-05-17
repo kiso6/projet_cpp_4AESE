@@ -1,3 +1,4 @@
+//nos classes definies 
 #include "constants.h"
 #include "grove_class.h"
 #include "phares.h"
@@ -6,7 +7,7 @@
 #include "ultrason.h"
 #include "direction.h"
 #include "voiture.h"
-//#include <Servo.h>
+//classes d'affichage + ticker pour gestion du temps réel
 #include <String>
 #include <Ticker.h>
 
