@@ -55,7 +55,7 @@ Ici, nous illustrons deux cas d'utilisation classiques: le cas où l'utilisateur
 #### Diagramme 2  
 ![Diagramme de séquence de l'arrêt d'urgence](https://i.ibb.co/gwf9wZx/Untitled.png)  
 ### Diagramme des classes
-![diagramme_classes_global](https://i.ibb.co/zS6KVBg/Diagramme-Classes-1.png) ![68747470733a2f2f692e6962622e636f2f7a53364b5642672f4469616772616d6d652d436c61737365732d312e706e67](https://github.com/kiso6/projet_cpp_4AESE/assets/128903240/20d7cd12-7fdf-4659-8e77-02a277747744)
+![diagramme_classes_global](https://github.com/kiso6/projet_cpp_4AESE/assets/128903240/20d7cd12-7fdf-4659-8e77-02a277747744)
 
 ### Diagramme des classes de la Voiturette  
 ![diagramme_classes_2](https://i.ibb.co/7nhsNNj/Diagramme-Classes-2.png)  
