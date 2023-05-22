@@ -7,7 +7,7 @@ _Raphael Tessier et Kilian Soual_
 
 ## SOMMAIRE  
    
-1. [CONTEXTE](https://github.com/kiso6/projet_cpp_4AESE#description)    
+1. [CONTEXTE](https://github.com/kiso6/projet_cpp_4AESE#contexte)    
 2. [HARDWARE](https://github.com/kiso6/projet_cpp_4AESE#hardware)  
 3. [DESCRIPTION DE L'ARCHITECTURE PHYSIQUE DU SYSTEME](https://github.com/kiso6/projet_cpp_4AESE#description-de-larchitecture-physique-du-systeme)  
 4. [SOFTWARE](https://github.com/kiso6/projet_cpp_4AESE#software)       
@@ -56,7 +56,6 @@ Ici, nous illustrons deux cas d'utilisation classiques: le cas où l'utilisateur
 ![Diagramme de séquence de l'arrêt d'urgence](https://i.ibb.co/gwf9wZx/Untitled.png)  
 ### Diagramme des classes
 ![diagramme_classes_global](https://github.com/kiso6/projet_cpp_4AESE/assets/128903240/20d7cd12-7fdf-4659-8e77-02a277747744)
-
 ### Diagramme des classes de la Voiturette  
 ![diagramme_classes_2](https://i.ibb.co/7nhsNNj/Diagramme-Classes-2.png)  
 
