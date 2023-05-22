@@ -60,7 +60,8 @@ Ici, nous illustrons deux cas d'utilisation classiques: le cas où l'utilisateur
 ![diagramme_classes_2](https://i.ibb.co/7nhsNNj/Diagramme-Classes-2.png)  
 
 ## DEMONSTRATION VIDEO  
-A VENIR (W.I.P)  
+Cliquez sur l'image ci-dessous pour accéder à la vidéo de présentation.  
+
 [![Video du projet!](https://i.ibb.co/3sT2GVw/mq1-1.png)](https://www.youtube.com/watch?v=CWf8fXVRR34 "Vidéo de présentation")
 
 ## CONCLUSION ET PERSPECTIVES D'AMELIORATION  
