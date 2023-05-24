@@ -23,6 +23,8 @@ _Raphael Tessier et Kilian Soual_
 Le but de ce projet est d’utiliser les capteurs et actionneurs de la gamme “Grove”, ainsi qu’une carte ESP8266 pour concevoir un produit dans l’internet des objets (IoT).
 L’avantage majeur de la carte ESP8266 est qu’elle dispose d’une carte WiFi, ce qui nous permet de communiquer de manière distante avec elle.
 Nous avons donc décidé de mettre au point une voiturette pilotable via une **application mobile (android)** qui utilise cette propriété de la carte. 
+L'objectif était de réutiliser nos jouets mecano d'enfance afin d'en faire une version amélioré pilotable à distance. 
+
 
 ## HARDWARE    
   - Moteur DC 6V de voiturette Meccano  
